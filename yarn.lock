@@ -3378,7 +3378,7 @@ __metadata:
     axios: ^0.27.2
     eslint: ^8.21.0
     jest: ^28.1.3
-    minanft: ^1.0.1
+    minanft: ^1.0.2
     prettier: 2.7.1
     snarkyjs: ^0.12.1
     ts-jest: ^28.0.7
@@ -3386,10 +3386,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"minanft@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "minanft@npm:1.0.1"
-  checksum: 2e91113b1dd760a715458a30df6d97153c1cc972f5e87ca984caa74f845025c089e9f1adcc379064abf4603ac17de0a15b4cf1fa7591416c4e1f4c9b2e7d7d46
+"minanft@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "minanft@npm:1.0.2"
+  checksum: b08647f8b9dfc185d867f0fafed129a4ae4a4ea348acbb45a358e1da04382f9fb0419711a9e4c33162588aa31ba4802eb066495bf8a77a66eb2cb7318653caf9
   languageName: node
   linkType: hard
 

@@ -1,12 +1,13 @@
 {
   "name": "minanft-lib-example",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Mina NFT",
   "license": "MIT",
   "scripts": {
     "example": "ts-node example.ts",
     "examplejs": "node example.js",
     "coverage": "jest --coverage",
+    "upgradeinteractive": "yarn upgrade-interactive",
     "style": "prettier --tab-width 4 --write {,!(node_modules)/**/}*.ts",
     "push": "git status && git push -u originminanftlibexample master",
     "gitcreate": "git remote add originminanftlibexample https://github.com/dfstio/minanft-lib-example",
@@ -16,7 +17,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "minanft": "^1.0.1",
+    "minanft": "^1.0.2",
     "snarkyjs": "^0.12.1"
   },
   "devDependencies": {
