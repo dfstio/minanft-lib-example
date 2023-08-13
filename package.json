@@ -1,6 +1,6 @@
 {
   "name": "minanft-lib-example",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Mina NFT",
   "license": "MIT",
   "scripts": {
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "minanft": "^1.0.0",
+    "minanft": "^1.0.1",
     "snarkyjs": "^0.12.1"
   },
   "devDependencies": {
