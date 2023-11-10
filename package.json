@@ -6,19 +6,12 @@
   "scripts": {
     "example": "ts-node example.ts",
     "examplejs": "node example.js",
-    "coverage": "jest --coverage",
-    "upgradeinteractive": "yarn upgrade-interactive",
-    "style": "prettier --tab-width 4 --write {,!(node_modules)/**/}*.ts",
-    "push": "git status && git push -u originminanftlibexample master",
-    "gitcreate": "git remote add originminanftlibexample https://github.com/dfstio/minanft-lib-example",
-    "githubcleartoken": "git config --global --unset credential.helper",
-    "checkout": "git checkout -b lib",
-    "commit": "git commit -a -S -m"
+    "vscode": "yarn dlx @yarnpkg/sdks vscode"
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "minanft": "^1.0.2",
-    "snarkyjs": "^0.12.1"
+    "minanft": "^1.1.1",
+    "o1js": "^0.14.1"
   },
   "devDependencies": {
     "@types/jest": "^28.1.6",
@@ -53,6 +46,7 @@
     "preset": "ts-jest",
     "testEnvironment": "node",
     "slowTestThreshold": 40,
+    "testTimeout": 10800000,
     "verbose": true
   }
 }
