@@ -2315,9 +2315,9 @@ mimic-fn@^2.1.0:
   integrity sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
 
 minanft@^1.1.1:
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/minanft/-/minanft-1.1.9.tgz#697051b65512730a6e7a381f486b381e9d753143"
-  integrity sha512-Cp1QWniilDoLWbpSS0TDFemneyOJEaPOp08TsHRdcesz4buYQ+aMPrKlBtBzu2MEAxigC+LmLEWrkPLy16e42g==
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/minanft/-/minanft-1.1.12.tgz#1535bfdea36d2d30d3ed421cf1609337a93cb998"
+  integrity sha512-TARRztWe9EvCIS3BsqnDmLQPJB+R422GjiEHhj5B35sKZYd9/aMSGn9kdgVsEzc0E+woKTu+3Q+cgKBPc+tDJA==
   dependencies:
     axios "^1.6.1"
     cli-progress "^3.12.0"
@@ -2377,9 +2377,9 @@ npm-run-path@^4.0.1:
     path-key "^3.0.0"
 
 o1js@^0.14.1:
-  version "0.14.1"
-  resolved "https://registry.yarnpkg.com/o1js/-/o1js-0.14.1.tgz#492bf8e8614539246a085a88e99702719545eb77"
-  integrity sha512-ro01Ez5kUqREGoQpvvmsWhIEZAy4lt1PHNn90rIaBCTzi41mlfynw6WDRVhkw5PAW8J9YeC9iLTaddbCNAzX5g==
+  version "0.14.2"
+  resolved "https://registry.yarnpkg.com/o1js/-/o1js-0.14.2.tgz#a7b26c832d0a329bccfab63137c5ce251026de79"
+  integrity sha512-xU0NfbaOeooT5G7sQbVD0uDKpViLKwfVeCk+3U4rJk7HRq2KtHkdc7rlA0/86AtLUSRQpD5OZlJbVGW4daDvfQ==
   dependencies:
     blakejs "1.2.1"
     cachedir "^2.4.0"
