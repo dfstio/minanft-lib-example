@@ -9,8 +9,8 @@ import { PrivateKey, PublicKey, Poseidon } from "o1js";
 import { PINATA_JWT, DEPLOYER, NAMES_ORACLE_SK } from "./env.json";
 
 async function main() {
-  MinaNFT.minaInit("testworld2");
-  const deployer = PrivateKey.fromBase58(DEPLOYER);
+  const keys = MinaNFT.minaInit("local");
+  const deployer = keys ? keys[0].privateKey : PrivateKey.fromBase58(DEPLOYER);
   const oraclePrivateKey = PrivateKey.fromBase58(NAMES_ORACLE_SK);
   const nameServiceAddress = PublicKey.fromBase58(MINANFT_NAME_SERVICE);
   const ownerPrivateKey = PrivateKey.random();
@@ -31,6 +31,7 @@ async function main() {
   nft.update({ key: `twitter`, value: `@sunnyday` });
   nft.update({ key: `secret`, value: `mysecretvalue`, isPrivate: true });
 
+  /*
   await nft.updateImage({
     filename: "./images/sunnyday.png",
     pinataJWT,
@@ -56,17 +57,27 @@ async function main() {
   mapLevel3.update({ key: `level3-3`, value: `value33` });
   map.updateMap({ key: `level2-4`, map: mapLevel3 });
   nft.updateMap({ key: `level 2 and 3 data`, map });
+  */
 
   console.log(`json:`, JSON.stringify(nft.toJSON(), null, 2));
   console.log("Compiling...");
   await MinaNFT.compile();
 
+  const nameService = new MinaNFTNameService({ oraclePrivateKey });
+  let tx = await nameService.deploy(deployer);
+  if (tx === undefined) {
+    throw new Error("Deploy failed");
+  }
+  await MinaNFT.wait(tx);
+
+  /*
   const nameService = new MinaNFTNameService({
     oraclePrivateKey,
     address: nameServiceAddress,
   });
+  */
 
-  const tx = await nft.mint({
+  tx = await nft.mint({
     deployer,
     owner,
     pinataJWT,

@@ -9,9 +9,9 @@
     "vscode": "yarn dlx @yarnpkg/sdks vscode"
   },
   "dependencies": {
-    "axios": "^0.27.2",
-    "minanft": "^1.1.12",
-    "o1js": "^0.14.2"
+    "axios": "^1.6.2",
+    "minanft": "^1.2.5",
+    "o1js": "^0.15.0"
   },
   "devDependencies": {
     "@types/jest": "^28.1.6",
@@ -48,5 +48,6 @@
     "slowTestThreshold": 40,
     "testTimeout": 10800000,
     "verbose": true
-  }
+  },
+  "packageManager": "yarn@4.0.2"
 }
