@@ -5,13 +5,14 @@
   "license": "MIT",
   "scripts": {
     "example": "ts-node example.ts",
+    "indexnft": "ts-node indexnft.ts",
     "examplejs": "node example.js",
     "vscode": "yarn dlx @yarnpkg/sdks vscode"
   },
   "dependencies": {
     "axios": "^1.6.2",
-    "minanft": "^1.2.5",
-    "o1js": "^0.15.0"
+    "minanft": "^1.3.34",
+    "o1js": "^0.15.1"
   },
   "devDependencies": {
     "@types/jest": "^28.1.6",
