@@ -105,13 +105,18 @@ async function main() {
   if (tx === undefined) {
     throw new Error("Mint failed");
   }
+
+  /*
+  // Uncomment to wait for transaction to be included in a block and index the NFT
   console.log("Waiting for transaction to be included in a block...");
   console.time("Transaction included in a block");
   await MinaNFT.wait(tx);
   console.timeEnd("Transaction included in a block");
 
+
   const indexed = await minanft.indexName({ name });
   console.log("Indexed:", indexed);
+  */
 }
 
 main().catch((error) => {
