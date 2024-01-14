@@ -25,19 +25,27 @@ Create env.json using env.example.json as an example and fill in your values. It
 
 For TypeScript, local blockchain
 
-`yarn local`
+```
+yarn local
+```
 
 For TypeScript, TestwWorld2 blockchain
 
-`yarn testworld2`
+```
+yarn testworld2
+```
 
 For JavaScript, local blockchain
 
-`yarn localjs`
+```
+yarn localjs
+```
 
 For JavaScript, TestWorld2 blockchain
 
-`yarn testworld2js`
+```
+yarn testworld2js
+```
 
 ## Indexing NFT
 
