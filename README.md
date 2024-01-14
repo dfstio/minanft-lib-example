@@ -10,10 +10,12 @@ You can test this library with this small example - see files example.ts and exa
 
 You need to install node and git
 and clone this repo
-``
+
+```
 git clone https://github.com/dfstio/minanft-lib-example
 cd minanft-lib-example
 yarn
+```
 
 ## Setting environment
 
