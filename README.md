@@ -51,7 +51,9 @@ yarn testworld2js
 
 After the transaction is successfully included in the block, you can change the name of the NFT in indexnft.ts and run
 
-`yarn indexnft`
+```
+yarn indexnft
+```
 
 to index the NFT for minanft.io frontend (only TestWorld2 network)
 
