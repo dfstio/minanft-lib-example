@@ -23,25 +23,31 @@ Create env.json using env.example.json as an example and fill in your values. It
 
 ## Running example:
 
-For TypeScript, local blockchain
+TypeScript, local blockchain
 
 ```
 yarn local
 ```
 
-For TypeScript, TestwWorld2 blockchain
+TypeScript, TestwWorld2 blockchain
 
 ```
 yarn testworld2
 ```
 
-For JavaScript, local blockchain
+TypeScript, TestwWorld2 blockchain, minimum example
+
+```
+yarn minimum
+```
+
+JavaScript, local blockchain
 
 ```
 yarn localjs
 ```
 
-For JavaScript, TestWorld2 blockchain
+JavaScript, TestWorld2 blockchain
 
 ```
 yarn testworld2js
@@ -77,7 +83,7 @@ https://github.com/dfstio/minanft-lib-example
 
 https://faucet.minaprotocol.com
 
-## Example log
+## Example log - TestWorld2
 
 ```
 Deployer balance: 63.686999991
@@ -240,4 +246,73 @@ pinJSON result: {
   Timestamp: '2024-01-14T18:59:18.725Z'
 }
 MinaNFT mint transaction sent: 5JvCsbpJbH781kBwWQbRgLLLt2ePwksd277BHAs4X38TnsmwcPdR
+```
+
+## Example log - TestWorld2, minimum example
+
+```
+Pinning image...
+pinFile result: {
+  IpfsHash: 'QmQRAK6oDejNqCGEQEPwtSQRHw3eL8bkUf93odRnuFAmji',
+  PinSize: 2092933,
+  Timestamp: '2023-11-22T16:57:04.690Z',
+  isDuplicate: true
+}
+Calculated SHA-3 512: 15.376ms
+NFT json: {
+  "name": "@test_3jo4a5mwkv",
+  "description": "",
+  "image": "https://gateway.pinata.cloud/ipfs/QmQRAK6oDejNqCGEQEPwtSQRHw3eL8bkUf93odRnuFAmji",
+  "external_url": "https://minanft.io/@test_3jo4a5mwkv",
+  "version": "0",
+  "time": 1705305595007,
+  "creator": "MinaNFT library",
+  "address": "B62qriYUF5bfwd9Jf2FfPM2UB4BPjSoYyumkJhcx1kpocjN3nxp8oto",
+  "owner": "21855079611724537626844129022911119300139352284649900566109884176575601064322",
+  "escrow": "0",
+  "metadata": {
+    "data": "16944423705401984042710659982750218602634622957581839341348482946890076337421",
+    "kind": "730516674633923388759973824690419864197272468066232442073255703029146736285"
+  },
+  "properties": {
+    "image": {
+      "data": "26319227950489813197834752810274396748704545580806296258320731883683546545906",
+      "kind": "image",
+      "linkedObject": {
+        "fileMerkleTreeRoot": "0",
+        "MerkleTreeHeight": 0,
+        "size": 2092429,
+        "mimeType": "image/png",
+        "SHA3_512": "1Q/NRemwLpwlofSARRFNz186jqXqFSL0I2P2vZIgJvN+wKkOyp2nTFUdAAMbROqMt6ogGXM5TvU2lV6dHa+giQ==",
+        "filename": "sunnyday.png",
+        "storage": "i:QmQRAK6oDejNqCGEQEPwtSQRHw3eL8bkUf93odRnuFAmji",
+        "fileType": "binary",
+        "metadata": "0"
+      }
+    }
+  }
+}
+Reserved: {
+  success: true,
+  error: undefined,
+  price: {
+    username: 'test_3jo4a5mwkv',
+    price: 19,
+    currency: 'usd',
+    description: 'Avatar NFT name'
+  },
+  isReserved: true,
+  signature: '7mXABh363akJ33WZgxTwXHMVwxke2oyjaV3bB6nk8HusaKU5Fn27bHA7SgybzFuMsqSwV56EwwK2BxmQ3UdNKAN9r7n3nY6x',
+  reason: ''
+}
+MinaNFTMetadataUpdate compiled: 10.567s
+MinaNFT compiled: 6.489s
+MinaNFTNameServiceContract compiled: 10.696s
+Pinning to IPFS...
+pinJSON result: {
+  IpfsHash: 'QmNdYeTz4JkVfRD8j7fq5bZiuJPMrXSDs9jpf1zpLeaaNi',
+  PinSize: 1068,
+  Timestamp: '2024-01-15T08:00:25.599Z'
+}
+MinaNFT mint transaction sent: 5JuZVazvGUtzyZm7XK3Pj2DYqtx1QPY34x4JuYkQzbnHPBrfAJ3J
 ```
