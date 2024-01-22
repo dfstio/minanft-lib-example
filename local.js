@@ -10,7 +10,7 @@ const {
 const { PrivateKey, PublicKey, Poseidon, Signature } = require("o1js");
 
 async function main() {
-  const keys = MinaNFT.minaInit("local");
+  const keys = MinaNFT.minaInit("local").keys;
   const deployer = keys[0].privateKey;
 
   const ownerPrivateKey = PrivateKey.random();

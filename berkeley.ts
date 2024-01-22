@@ -1,4 +1,4 @@
-const {
+import {
   MinaNFT,
   MapData,
   MinaNFTNameService,
@@ -6,39 +6,39 @@ const {
   accountBalanceMina,
   makeString,
   api,
-} = require("minanft");
-const { PrivateKey, PublicKey, Poseidon, Signature } = require("o1js");
-const { DEPLOYER, PINATA_JWT, JWT } = require("./env.json");
+} from "minanft";
+import { PrivateKey, PublicKey, Poseidon, Signature } from "o1js";
+import { PINATA_JWT, DEPLOYER, JWT } from "./env.json";
 
 async function main() {
-  const keys = MinaNFT.minaInit("testworld2");
-  const deployer = keys ? keys[0].privateKey : PrivateKey.fromBase58(DEPLOYER);
+  MinaNFT.minaInit("berkeley");
+  const deployer = PrivateKey.fromBase58(DEPLOYER);
 
   const ownerPrivateKey = PrivateKey.random();
   const ownerPublicKey = ownerPrivateKey.toPublicKey();
-  const owner = Poseidon.hash(ownerPublicKey.toFields());
   const nftPrivateKey = PrivateKey.random();
   const nftPublicKey = nftPrivateKey.toPublicKey();
-  const pinataJWT = PINATA_JWT;
+  const owner = Poseidon.hash(ownerPublicKey.toFields());
+  const pinataJWT = PINATA_JWT; // use "" to not pin on local network
+  const name = "@test_" + makeString(10);
 
   console.log(
     `Deployer balance: ${await accountBalanceMina(deployer.toPublicKey())}`
   );
 
-  const nft = new MinaNFT({
-    name: `@test` + makeString(10),
-    address: nftPublicKey,
-  });
+  const nft = new MinaNFT({ name, owner, address: nftPublicKey });
+
   nft.updateText({
     key: `description`,
-    text: "This is my long description of the NFT. Can be of any length, supports markdown.",
+    text: "This is my long description of the NFT @test. Can be of any length, supports **markdown**.",
   });
-  nft.update({ key: `twitter`, value: `@builder` });
+  nft.update({ key: `twitter`, value: `@test` });
   nft.update({ key: `secret`, value: `mysecretvalue`, isPrivate: true });
 
   await nft.updateImage({
-    filename: "./images/navigator.jpg",
+    filename: "./images/sunnyday.png",
     pinataJWT,
+    calculateRoot: false, // set to true to calculate root, but it takes a long time
   });
 
   const map = new MapData();
@@ -53,6 +53,7 @@ async function main() {
     key: "woman",
     filename: "./images/woman.png",
     pinataJWT,
+    calculateRoot: false, // set to true to calculate root, but it takes a long time
   });
 
   const mapLevel3 = new MapData();
@@ -63,22 +64,23 @@ async function main() {
   nft.updateMap({ key: `level 2 and 3 data`, map });
 
   console.log(`json:`, JSON.stringify(nft.toJSON(), null, 2));
-  console.log("Compiling...");
-  await MinaNFT.compile();
-
-  /* 
-  const nameService = new MinaNFTNameService({ oraclePrivateKey });
-  let tx = await nameService.deploy(deployer);
-  if (tx === undefined) {
-    throw new Error("Deploy failed");
-  }
-  await MinaNFT.wait(tx);
-*/
 
   const nameService = new MinaNFTNameService({
     address: PublicKey.fromBase58(MINANFT_NAME_SERVICE),
   });
 
+  /* 
+  // Deploy name service on local network
+  const oraclePrivateKey = PrivateKey.random();
+  const nameService = new MinaNFTNameService({oraclePrivateKey});
+  let tx = await nameService.deploy(deployer);
+  if (tx === undefined) {
+    throw new Error("Deploy failed");
+  }
+  await MinaNFT.wait(tx);
+  */
+
+  // Register name
   const minanft = new api(JWT);
   const reserved = await minanft.reserveName({
     name,
@@ -92,8 +94,11 @@ async function main() {
   ) {
     throw new Error("Name not reserved");
   }
-  const signature = Signature.fromBase58(reserved.signature);
+  const signature: Signature = Signature.fromBase58(reserved.signature);
 
+  console.log("Compiling...");
+  await MinaNFT.compile();
+  console.log("Deploying...");
   const tx = await nft.mint({
     deployer,
     owner,
@@ -112,7 +117,6 @@ async function main() {
   console.time("Transaction included in a block");
   await MinaNFT.wait(tx);
   console.timeEnd("Transaction included in a block");
-
 
   const indexed = await minanft.indexName({ name });
   console.log("Indexed:", indexed);

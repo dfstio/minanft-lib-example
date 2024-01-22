@@ -29,13 +29,13 @@ TypeScript, local blockchain
 yarn local
 ```
 
-TypeScript, TestwWorld2 blockchain
+TypeScript, Berkeley blockchain
 
 ```
-yarn testworld2
+yarn berkeley
 ```
 
-TypeScript, TestwWorld2 blockchain, minimum example
+TypeScript, Berkeley blockchain, minimum example
 
 ```
 yarn minimum
@@ -47,10 +47,10 @@ JavaScript, local blockchain
 yarn localjs
 ```
 
-JavaScript, TestWorld2 blockchain
+JavaScript, Berkeley blockchain
 
 ```
-yarn testworld2js
+yarn berkeleyjs
 ```
 
 ## Indexing NFT
@@ -61,7 +61,7 @@ After the transaction is successfully included in the block, you can change the 
 yarn indexnft
 ```
 
-to index the NFT for minanft.io frontend (only TestWorld2 network)
+to index the NFT for minanft.io frontend (only Berkeley network)
 
 ## Website
 

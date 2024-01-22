@@ -10,7 +10,7 @@ import {
 import { PrivateKey, PublicKey, Poseidon, Signature } from "o1js";
 
 async function main() {
-  const keys = MinaNFT.minaInit("local");
+  const keys = MinaNFT.minaInit("local").keys;
   if (keys === undefined) {
     throw new Error("Cannot get deployer keys");
   }

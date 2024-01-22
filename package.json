@@ -5,16 +5,16 @@
   "license": "MIT",
   "scripts": {
     "local": "ts-node local.ts",
-    "testworld2": "ts-node testworld2.ts",
+    "berkeley": "ts-node berkeley.ts",
     "minimum": "ts-node minimum.ts",
     "indexnft": "ts-node indexnft.ts",
     "localjs": "node local.js",
-    "testworld2js": "node testworld2.js",
+    "berkeleyjs": "node berkeley.js",
     "vscode": "yarn dlx @yarnpkg/sdks vscode"
   },
   "dependencies": {
     "axios": "^1.6.2",
-    "minanft": "^1.4.14",
+    "minanft": "^1.5.1",
     "o1js": "^0.15.1"
   },
   "devDependencies": {
