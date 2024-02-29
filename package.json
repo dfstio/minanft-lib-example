@@ -13,8 +13,8 @@
     "vscode": "yarn dlx @yarnpkg/sdks vscode"
   },
   "dependencies": {
-    "minanft": "^1.6.0",
-    "o1js": "^0.15.4"
+    "minanft": "^1.7.4",
+    "o1js": "^0.16.2"
   },
   "devDependencies": {
     "typescript": "^5.3.3"

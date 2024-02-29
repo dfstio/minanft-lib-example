@@ -109,7 +109,7 @@ async function main() {
   });
   if (tx === undefined) {
     throw new Error("Mint failed");
-  }
+  } else console.log("Minted, transaction hash:", tx);
 
   /*
   // Uncomment to wait for transaction to be included in a block and index the NFT
